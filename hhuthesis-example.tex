@@ -1,0 +1,106 @@
+\documentclass[bachelor]{hhuthesis}
+
+%% 模板选项：本科毕业论文bachelor；学术型硕士论文academicmaster；专业学位硕士论文professionalmaster；非全日制专业学位论文nonfulltimemaster；博士论文doctor
+%% 因为此项目为本科毕业论文模板，因此默认为bachelor，不需更改
+
+%% 更改数学字体设置，Latin Modern Math 默认的有点细，可选用下列宏包
+% \usepackage[bold-style=ISO]{unicode-math}
+\usepackage{lipsum}
+
+%% 本科论文规定不允许有空页，因此将空页替换掉
+\let\cleardoublepage\clearpage
+
+\begin{document}
+
+%%
+%% 基本信息设定（一定要改这里）
+%%
+
+% 此处填写你的学号
+\studentnumber{1812100019}
+% 此处填写你的中文论文标题
+\title{分布式智能监控终端\\与传感信息融合系统设计及实现}
+% 此处填写你的中文姓名
+\author{张晓明}
+% 此处填写你的年级，如：2018级
+\grade{2018级}
+% 此处填写指导教师的中文名
+\tutor{毛明禾}
+% 此处填写专业的中文名
+\major{电子信息工程}
+% 此处填写日期，如：2022年5月
+\thesisdate{2022年5月}
+% 此处填写中文地点，如：中~~国~~$\cdot$~~南~~京，将城市名改成所在的城市即可
+\location{中~~国~~$\cdot$~~南~~京}
+% 此处填写英文论文标题
+\englishtitle{Design and implementation of distributed smart monitoring terminal and sensor information fusion system}
+% 此处填写英文学院名
+\englishcollege{Computer and information}
+% 此处填写英文专业名
+\englishmajor{Electronics and Information Engineering}
+% 此处填写你的英文姓名
+\englishauthor{Xiaoming Zhang}
+% 此处填写指导教师的英文名
+\englishtutor{Dr. Minghe Mao}
+% 此处填写英文地点，如：Nanjing,  P.R.China
+\englishlocate{Nanjing,  P.R.China}
+
+%%
+%% 封面
+%%
+
+%% 制作中文封面
+\makenlctitle
+
+%% 制作英文封面
+\makeeninfo
+
+%% 论文原创性声明
+\makedeclare
+
+%%
+%% 前置部分
+%%
+\frontmatter
+
+%% 摘要
+\input{chapters/abstract}
+
+%% 符号对照表，可选，如不用可注释掉
+% \input{chapters/denotation}
+
+%% 加入目录
+\tableofcontents
+
+%% 加入图、表索引(同时取消图表索引中章之间的垂直间隔，不需要可以注释)
+\let\origaddvspace\addvspace
+\renewcommand{\addvspace}[1]{}
+\listoffigures
+\listoftables
+\renewcommand{\addvspace}[1]{\origaddvspace{#1}}
+
+%%
+%% 正文部分
+%%
+\mainmatter
+
+%% 各章正文内容
+\input{chapters/chapter1}
+\input{chapters/chapter2}
+
+%% 参考文献样式设定
+\bibliographystyle{hhuthesis-numeric}% 顺序编码式
+%% 参考文献，10号字，使用 BibTeX，包含参考文献文件.bib
+\bibliography{reference/chap1}
+
+%%
+%% 后置部分
+%% 
+
+%% (其后部分无编号)
+\backmatter
+
+%% 致谢
+\input{chapters/acknowledgement}
+
+\end{document}
