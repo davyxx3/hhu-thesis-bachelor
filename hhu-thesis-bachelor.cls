@@ -1,40 +1,5 @@
-%%
-%% This is file 'hhuthesis.cls'
-%%
-%% Copyright(C) 2020-2021, Wenhan Cao.
-%% College of Water Conservancy and Hydropower Engineering, Hohai University.
-%%
-%% Home Page of the Project:
-%% http://github.com/caowenhan/hhuthesis
-%%
-%% Version:v2.0.0
-%% Last update: April 7th,2021.
-%% It may be distribute and / or modified under the conditions of the LaTeX Project
-%% Public License, either version 1.3c of this license or (at your option) any
-%% later version. The latest version of this license is in
-%% 
-%% http://www.latex-project.org/lppl.txt
-%%
-%% and version 1.3c or later is part of all distributions of LaTeX version
-%% 2008/05/04 or later.
-%%
-
 \NeedsTeXFormat{LaTeX2e}[2008/05/04]
-\ProvidesClass{hhuthesis}[2021/04/07 v2.0.0 hhuthesis document class]
-
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
-\newif\ifhhut@bachelor\hhut@bachelorfalse
-\newif\ifhhut@academicmaster\hhut@academicmasterfalse
-\newif\ifhhut@professionalmaster\hhut@professionalmasterfalse
-\newif\ifhhut@nonfulltimemaster\hhut@nonfulltimemasterfalse
-\newif\ifhhut@doctor\hhut@doctorfalse
-\DeclareOption{bachelor}{\hhut@bachelortrue}
-\DeclareOption{academicmaster}{\hhut@academicmastertrue}
-\DeclareOption{professionalmaster}{\hhut@professionalmastertrue}
-\DeclareOption{nonfulltimemaster}{\hhut@nonfulltimemastertrue}
-\DeclareOption{doctor}{\hhut@doctortrue}
-
-\ProcessOptions\relax
+\ProvidesClass{hhu-thesis-bachelor}[2023/11/23 hhu-thesis-bachelor class]
 \LoadClass[zihao=-4,a4paper,twoside,openright,UTF8,space=auto]{ctexbook}
 
 %%
@@ -49,84 +14,24 @@
 \def\hhut@label@enabstract{ABSTRACT}
 \def\hhut@label@enkeywords{Keywords:~}
 \def\hhut@label@acknowledgement{致谢}
-\def\hhut@label@resume{附录}
-\def\hhut@value@templateversion{v2.0.0}
-%% 当前模板的版本
-\newcommand{\version}{\hhut@value@templateversion}
 
-%% 国家图书馆封面标题
-\def\hhut@label@nlc{国家图书馆封面}
+%% 中文封面常量
+\def\hhut@label@cover{中文封面}
 \def\hhut@label@name{姓名}
 \def\hhut@label@reviewer{评阅人}
 \def\hhut@label@studentnumber{学号：}
-\def\hhut@label@classification{分类号：}
-\def\hhut@label@securitylevel{密级：}
 \def\hhut@label@grade{年级：}
-\def\hhut@label@udc{U~D~C：}
-\def\hhut@label@thesistitle@doctor{博士学位论文}
-\def\hhut@label@thesistitle@academic{硕士学位论文}
-\def\hhut@label@thesistitle@professional{全日制工程硕士专业学位论文}
-\def\hhut@label@thesistitle@nonfulltime{非全日制工程硕士专业学位论文}
-\def\hhut@label@thesistitle@bachelor{本科毕业论文}
 \def\hhut@label@tutor{指导教师}
-\def\hhut@label@professional@tutora{学校指导教师：}
-\def\hhut@label@professional@tutorb{基地指导教师：}
-\def\hhut@label@degree{申请学位级别：}
 \def\hhut@label@major{专业}
-\def\hhut@label@submitdate{论文提交日期：}
-\def\hhut@label@defenddate{论文答辩日期：}
-\def\hhut@label@awarded{学位授予单位和日期：}
-\def\hhut@label@chairman{答辩委员会主席：}
-\def\hhut@label@comma{、}
+\def\hhut@label@thesistype{本科毕业论文}
 
-%% 论文书脊封面标题
-\def\hhut@label@spine{中缝（书脊）}
+%% 英文封面常量
+\def\hhut@label@encover{英文封面}
 
-%% 论文中文信息封面标题
-\def\hhut@label@cover{中文信息封面}
-\def\hhut@label@cover@classification{分类号(中图法)}
-\def\hhut@label@cover@udc{UDC(DDC)}
-\def\hhut@label@cover@securitylevel{密级}
-\def\hhut@label@cover@author{姓名}
-\def\hhut@label@cover@studentnumber{学号}
-\def\hhut@label@cover@institute{单位}
-\def\hhut@label@cover@zhtitle{论文中文题名}
-\def\hhut@label@cover@zhsubtitle{论文中文副题名}
-\def\hhut@label@cover@entitle{论文英文题名}
-\def\hhut@label@cover@ensubtitle{论文英文副题名}
-\def\hhut@label@cover@thesislang{论文语种}
-\def\hhut@label@cover@abstractlang{论文摘要语种}
-\def\hhut@label@cover@thesispages{论文页数}
-\def\hhut@label@cover@numofwords{论文字数}
-\def\hhut@label@cover@unitofwords{(万)}
-\def\hhut@label@cover@thesiskeywords{论文关键词}
-\def\hhut@label@cover@degree{申请学位级别}
-\def\hhut@label@cover@major{专业}
-\def\hhut@label@cover@researchfield{研究方向}
-\def\hhut@label@cover@tutor{指导教师}
-\def\hhut@label@cover@professional@tutora{学校指导教师}
-\def\hhut@label@cover@professional@tutorb{基地指导教师}
-\def\hhut@label@cover@tutorinstitute{导师单位}
-\def\hhut@label@cover@professional@tutorinstitute{单位}
-\def\hhut@label@cover@defenddate{论文答辩日期}
-
-%% 论文英文信息封面标题
-\def\hhut@label@encover{英文信息封面}
-\def\hhut@label@enstatement{
-    Dissertation Submitted to\\
-	{\rmfamily \zihao{4} \textbf{\hhut@value@eninstitute}}\\
-	In Fulfillment of the Requirement\\
-	For the Degree of\\
-	{\rmfamily \zihao{4} \textbf{\hhut@value@englishdegree}}\\
-}
-\def\hhut@label@enby{By}
-\def\hhut@label@entutor{Dissertation Supervisor:~Professor}
-
-%% 原创性声明内容
-\def\hhut@label@declareoriginal{原创性声明}
-\def\hhut@label@original{郑重申明}
-\def\hhut@label@originalcontent{
-本人呈交的毕业论文，是在导师的指导下，独立进行研究工作所取得的成果，
+%% 郑重声明常量
+\def\hhut@label@declare{郑重声明}
+\def\hhut@label@declarecontent{
+\hspace{2em}本人呈交的毕业论文，是在导师的指导下，独立进行研究工作所取得的成果，
 所有数据、图片资料真实可靠。尽我所知，
 除文中已经注明引用的内容外，
 本设计（论文）的研究成果不包含他人享有著作权的内容。
@@ -135,16 +40,7 @@
 本设计（论文）的知识产权归属于培养单位。
 }
 \def\hhut@label@authorsign{本人签名：}
-\def\hhut@label@originaldate{日期：}
-\def\hhut@label@authorization{学位论文使用授权说明：}
-\def\hhut@label@authorizationcontent{
-河海大学、中国科学技术信息研究所、国家图书馆、中国学术期刊
-(光盘版)电子杂志社有权保留本人所送交学位论文的复印件或电子文档，
-可以采用影印、缩印或其他复制手段保存论文。本人电子文档的内容和
-纸质论文的内容相一致。除在保密期内的保密论文外，允许论文被查阅和
-借阅。论文全部或部分内容的公布(包括刊登)授权河海大学研究生院办
-理。
-}
+\def\hhut@label@declaredate{日期：}
 
 %% 加载宏包
 
@@ -251,7 +147,10 @@ footskip=0.7cm % 页脚1.8cm %
 	\hbox{}\newpage\if@twocolumn\hbox{}\newpage\fi\fi\fi}
 
 %% 设置行距为20磅
-\setstretch{1.38}
+% \setstretch{1.38}
+
+\linespread{1.5}
+
 %% 设置段落间距
 \setlength{\parskip}{0pt}    
 
@@ -356,9 +255,7 @@ footskip=0.7cm % 页脚1.8cm %
 	%% 设置页脚格式
 	\fancyfoot[C]{\songti \zihao{-5} \thepage}
 	%% 设置页眉格式
-    \fancyhead[CO]{ \ifhhut@doctor \zihao{-5} {\songti 河海大学博士学位论文}
-                        \else \ifhhut@bachelor \zihao{-5} {\songti 河海大学本科毕业论文}
-                            \else \zihao{-5} {\songti 河海大学硕士学位论文}\fi\fi}
+    \fancyhead[CO]{\zihao{-5} {\songti 河海大学本科毕业论文}}
     \fancyhead[CE]{ \songti \zihao{-5} \leftmark}
 }
 
@@ -516,64 +413,28 @@ footskip=0.7cm % 页脚1.8cm %
 	\underline{\hbox to #1{\hfill#2\hfill}}}
 \def\hhutunderline{\@ifnextchar[\hhut@underline\underline}
 
-
-%% 国家图书馆封面&论文中文信息封面的可用命令
+%% 论文中文封面的可用命令
 \newcommand\studentnumber[1]{\def\hhut@value@studentnumber{#1}}
-\newcommand\classification[1]{\def\hhut@value@classification{#1}}
-\newcommand\grade[1]{\def\hhut@value@grade{#1}}
-\newcommand\securitylevel[1]{\def\hhut@value@securitylevel{#1}}
-\newcommand\udc[1]{\def\hhut@value@udc{#1}}
 \renewcommand\title[2][\hhut@value@title]{%
-    \def\hhut@value@title{#2}
-    \def\hhut@value@titlemark{\MakeUppercase{#1}}}
+\def\hhut@value@title{#2}
+\def\hhut@value@titlemark{\MakeUppercase{#1}}}
 \renewcommand\author[1]{\def\hhut@value@author{#1}}
-\newcommand\tutorinfoa[1]{\def\hhut@value@tutorinfoa{#1}}
-\newcommand\tutorinfob[1]{\def\hhut@value@tutorinfob{#1}}
-\newcommand\degree[1]{\def\hhut@value@degree{#1}}
+\newcommand\grade[1]{\def\hhut@value@grade{#1}}
 \newcommand\major[1]{\def\hhut@value@major{#1}}
-\newcommand\submitdate[1]{\def\hhut@value@submitdate{#1}}
-\newcommand\defenddate[1]{\def\hhut@value@defenddate{#1}}
 \newcommand\awarded[1]{\def\hhut@value@awarded{#1}}
-\newcommand\chairman[1]{\def\hhut@value@chairman{#1}}
-\newcommand\reviewera[1]{\def\hhut@value@reviewera{#1}}
-\newcommand\reviewerb[1]{\def\hhut@value@reviewerb{#1}}
-\newcommand\reviewerc[1]{\def\hhut@value@reviewerc{#1}}
-\newcommand\reviewerd[1]{\def\hhut@value@reviewerd{#1}}
-\newcommand\reviewere[1]{\def\hhut@value@reviewere{#1}}
-\newcommand\reviewerf[1]{\def\hhut@value@reviewerf{#1}}
-\newcommand\reviewerg[1]{\def\hhut@value@reviewerg{#1}}
-\newcommand\nlcdate[1]{\def\hhut@value@nlcdate{#1}}
-\newcommand\nlclocate[1]{\def\hhut@value@nlclocate{#1}}
-\newcommand\vtitle[1]{\def\hhut@value@vtitle{#1}}
-\newcommand\institute[1]{\def\hhut@value@institute{#1}}
-\newcommand\zhtitle[1]{\def\hhut@value@zhtitle{#1}}
-\newcommand\zhsubtitle[1]{\def\hhut@value@zhsubtitle{#1}}
-\newcommand\entitle[1]{\def\hhut@value@entitle{#1}}
-\newcommand\ensubtitle[1]{\def\hhut@value@ensubtitle{#1}}
-\newcommand\thesislang[1]{\def\hhut@value@thesislang{#1}}
-\newcommand\abstractlang[1]{\def\hhut@value@abstractlang{#1}}
-\newcommand\thesispages[1]{\def\hhut@value@thesispages{#1}}
-\newcommand\numofwords[1]{\def\hhut@value@numofwords{#1}}
-\newcommand\thesiskeywords[1]{\def\hhut@value@thesiskeywords{#1}}
-\newcommand\researchfield[1]{\def\hhut@value@researchfield{#1}}
 \newcommand\tutor[1]{\def\hhut@value@tutor{#1}}
-\newcommand\tutorinstitute[1]{\def\hhut@value@tutorinstitute{#1}}
-\newcommand\tutora[1]{\def\hhut@value@tutora{#1}}
-\newcommand\tutorainstitute[1]{\def\hhut@value@tutorainstitute{#1}}
-\newcommand\tutorb[1]{\def\hhut@value@tutorb{#1}}
-\newcommand\tutorbinstitute[1]{\def\hhut@value@tutorbinstitute{#1}}
-
 \newcommand\thesisdate[1]{\def\hhut@value@thesisdate{#1}}
 \newcommand\location[1]{\def\hhut@value@location{#1}}
 
-%% “绘制”hhut国家图书馆封面
-\newcommand\makenlctitle[1]{%
+%% 生成中文封面
+\newcommand\makecover{%
     \cleardoublepage
     \thispagestyle{empty}
-    \pdfbookmark[0]{\hhut@label@nlc}{nlc}
+    \pdfbookmark[0]{\hhut@label@cover}{cover}
     {\heiti \zihao{5} 
         \vskip 10pt
         \hfill
+        \noindent
         \makebox[40pt][r]{\hhut@label@studentnumber}
         \hhutunderline[90pt]{\hhut@value@studentnumber}
         \vskip 10pt
@@ -586,11 +447,7 @@ footskip=0.7cm % 页脚1.8cm %
         \includegraphics[height=25mm]{hhuname.png}\\
         \vskip 10pt
         \def\ULthickness{2pt}
-        {\ifhhut@doctor \songti \zihao{2} \hhut@label@thesistitle@doctor
-        \else \ifhhut@academicmaster \songti \zihao{2} \hhut@label@thesistitle@academic
-            \else \ifhhut@professionalmaster \songti \zihao{2} \hhut@label@thesistitle@professional
-                \else \ifhhut@nonfulltimemaster \songti \zihao{2} \hhut@label@thesistitle@nonfulltime
-                    \else \songti \zihao{1} \hhut@label@thesistitle@bachelor \fi\fi\fi\fi}% 学位论文
+        {\songti \zihao{1} \hhut@label@thesistype}
         \begin{spacing}{2.5}
         {\heiti \zihao{2} \bfseries
         \hhut@value@title
@@ -601,11 +458,11 @@ footskip=0.7cm % 页脚1.8cm %
     \begin{spacing}{2.0}
     {\songti \zihao{-3} \bfseries
         \begin{centering}
-            \noindent{\heiti \zihao{3} \hhut@label@major}
+            \noindent{\songti \zihao{-3} \hhut@label@major}
             \hhutunderline[150pt]{\hhut@value@major}\\
-            {\heiti \zihao{3}\hhut@label@name}\hhutunderline[150pt]{\hhut@value@author}\\
-            {\heiti \zihao{3}\hhut@label@tutor}\hhutunderline[150pt]{\hhut@value@tutor}\\
-            {\heiti \zihao{3}\hhut@label@reviewer}\hhutunderline[150pt]{}\\
+            {\songti \zihao{-3}\hhut@label@name}\hhutunderline[150pt]{\hhut@value@author}\\
+            {\songti \zihao{-3}\hhut@label@tutor}\hhutunderline[150pt]{\hhut@value@tutor}\\
+            {\songti \zihao{-3}\hhut@label@reviewer}\hhutunderline[150pt]{}\\
         \end{centering}
     }
     \vskip 50pt
@@ -622,124 +479,16 @@ footskip=0.7cm % 页脚1.8cm %
     \fi
 }
 
-%% “绘制”书脊页
-\newcommand\makeverticaltitle{
-   \cleardoublepage
-   \thispagestyle{empty}
-   \pdfbookmark[0]{\hhut@label@spine}{spine}
-   {\vskip 5cm
-   \begin{flushleft}
-    \setstretch{1.1}
-    \begin{minipage}{1em}
-        {\songti\zihao{4}\hhut@value@vtitle}
-        \vskip 2cm
-        {\songti\zihao{4}\hhut@value@author}
-        \vskip 2cm
-        {\songti\zihao{4}\hhut@value@institute}
-    \end{minipage}
-   \end{flushleft}
-   }
-    \clearpage
-    \if@twoside
-        \thispagestyle{empty}
-        \cleardoublepage
-    \fi
-}
-
-% "绘制"论文中文信息封面
-\newcommand\makeinfo[1]%
-{
-    \newpage
-    \cleardoublepage
-    \thispagestyle{empty}
-    \pdfbookmark[0]{\hhut@label@cover}{cover}
-    \begin{spacing}{3.0}
-    {\songti \zihao{4}
-    \noindent\hhut@label@cover@classification%
-    \hhutunderline[69pt]{\hhut@value@classification}%
-    \hspace{6pt}
-    \hhut@label@cover@udc%
-    \hhutunderline[69pt]{\hhut@value@udc}%
-    \hspace{6pt}
-    \hhut@label@cover@securitylevel%
-    \hhutunderline[90pt]{\hhut@value@securitylevel}\\
-    \noindent\hhut@label@cover@author%
-    \hhutunderline[84pt]{\hhut@value@author}%
-    \hspace{6pt}
-    \hhut@label@cover@studentnumber%
-    \hhutunderline[102pt]{\hhut@value@studentnumber}%
-    \hspace{6pt}
-    \hhut@label@cover@institute%
-    \hhutunderline[96pt]{\hhut@value@institute}\\
-    \noindent\hhut@label@cover@zhtitle%
-    \hhutunderline[361pt]{\hhut@value@zhtitle}\\
-    \noindent\hhut@label@cover@zhsubtitle%
-    \hhutunderline[345pt]{\hhut@value@zhsubtitle}\\
-    \noindent\hhut@label@cover@entitle%
-    \uline{\hhut@value@entitle}\\
-    \noindent\hhut@label@cover@ensubtitle%
-    \hhutunderline[345pt]{\hhut@value@ensubtitle}\\
-    \noindent\hhut@label@cover@thesislang%
-    \hhutunderline[40pt]{\hhut@value@thesislang}%
-    \hhut@label@cover@abstractlang%
-    \hhutunderline[60pt]{\hhut@value@abstractlang}%
-    \hhut@label@cover@thesispages%
-    \hhutunderline[30pt]{\hhut@value@thesispages}%
-    \hhut@label@cover@numofwords%
-    \hhutunderline[30pt]{\hhut@value@numofwords}
-    \hhut@label@cover@unitofwords\\
-    \noindent\hhut@label@cover@thesiskeywords%
-    \hhutunderline[373pt]{\hhut@value@thesiskeywords}\\
-    \noindent\hhut@label@cover@degree%
-    \hhutunderline[90pt]{\hhut@value@degree}%
-    \hfill
-    \hhut@label@cover@major%
-    \hhutunderline[210pt]{\hhut@value@major}\\
-    \noindent\hhut@label@cover@researchfield%
-    \hhutunderline[387pt]{\hhut@value@researchfield}\\
-    {\ifhhut@professionalmaster
-        \noindent\hhut@label@cover@professional@tutora%
-        \hhutunderline[90pt]{\hhut@value@tutora}%
-        \hfill
-        \hhut@label@cover@professional@tutorinstitute%
-        \hhutunderline[210pt]{\hhut@value@tutorainstitute}\\
-        \noindent\hhut@label@cover@professional@tutorb%
-        \hhutunderline[90pt]{\hhut@value@tutorb}%
-        \hfill
-        \hhut@label@cover@professional@tutorinstitute%
-        \hhutunderline[210pt]{\hhut@value@tutorbinstitute}\\            
-    \else
-        \noindent\hhut@label@cover@tutor%
-        \hhutunderline[90pt]{\hhut@value@tutor}%
-        \hfill
-        \hhut@label@cover@tutorinstitute%
-        \hhutunderline[210pt]{\hhut@value@tutorinstitute}\\
-    \fi}
-    \noindent\hhut@label@cover@defenddate%
-    \hhutunderline[357pt]{\hhut@value@defenddate}
-    }
-    \end{spacing}
-    \clearpage
-    \if@twoside
-        \thispagestyle{empty}
-        \cleardoublepage
-    \fi
-}
-
-%% 论文英文信息页可用命令
+%% 论文英文封面可用命令
 \newcommand\englishtitle[1]{\def\hhut@value@englishtitle{#1}}
-\newcommand\englishmajor[1]{\def\hhut@value@englishmajor{#1}}
 \newcommand\englishcollege[1]{\def\hhut@value@englishcollege{#1}}
+\newcommand\englishmajor[1]{\def\hhut@value@englishmajor{#1}}
 \newcommand\englishauthor[1]{\def\hhut@value@englishauthor{#1}}
 \newcommand\englishtutor[1]{\def\hhut@value@englishtutor{#1}}
 \newcommand\englishlocate[1]{\def\hhut@value@englishlocate{#1}}
-\newcommand\eninstitute[1]{\def\hhut@value@eninstitute{#1}}
-\newcommand\englishdepartment[1]{\def\hhut@value@englishdepartment{#1}}
-\newcommand\englishdate[1]{\def\hhut@value@englishdate{#1}}
-\newcommand\englishdegree[1]{\def\hhut@value@englishdegree{#1}}
 
-%% “绘制”论文英文信息页
-\newcommand\makeeninfo[1]{%
+%% 生成英文封面
+\newcommand\makeencover{
     \cleardoublepage
     \thispagestyle{empty}
     \pdfbookmark[0]{\hhut@label@encover}{encover}
@@ -763,7 +512,7 @@ footskip=0.7cm % 页脚1.8cm %
         {\normalfont\rmfamily\zihao{4}Directed by:
         \normalfont\rmfamily \zihao{4} \hhut@value@englishtutor}
         \vskip 60pt
-        {\rmfamily \zihao{-2} \textbf{\hhut@value@englishlocate}}\\      
+        {\rmfamily \zihao{-2} {\hhut@value@englishlocate}}\\      
         \end{spacing}
     \end{center}
     \normalfont
@@ -774,26 +523,26 @@ footskip=0.7cm % 页脚1.8cm %
     \fi
 }
 
-%% “绘制”原创性声明
+%% 郑重声明页
 \newcommand\makedeclare{
     \cleardoublepage
-    \pdfbookmark[0]{\hhut@label@declareoriginal}{declareoriginal}
+    \pdfbookmark[0]{\hhut@label@declare}{declare}
     \thispagestyle{empty}
     \vskip 40pt
     \begin{spacing}{2.0}
         { \zihao{4} \songti
         \begin{center}
             \zihao{2}
-            \heiti
-            \hhut@label@original \par
+            \songti
+            \textbf{\hhut@label@declare} \par
         \end{center}
         \vskip 10pt
-        \hhut@label@originalcontent \par
+        \hhut@label@declarecontent \par
         \vskip 60pt
         \hhut@label@authorsign
         \hhutunderline[120pt]{}
         \hfill
-        \hhut@label@originaldate
+        \hhut@label@declaredate
         \hhutunderline[120pt]{}
     }
     \end{spacing}
@@ -832,7 +581,7 @@ footskip=0.7cm % 页脚1.8cm %
 }{}
 %% 中文关键词
 \newcommand\keywords[1]{%
-    \vspace{2ex}\noindent{\textbf{\hhut@label@keywords}} #1}
+    \vspace{2ex}{\textbf{\heiti \zihao{-4} \hhut@label@keywords}} #1}
 
 %% 英文摘要
 \newenvironment{enabstract}
@@ -842,7 +591,7 @@ footskip=0.7cm % 页脚1.8cm %
 }{}
 %% 英文关键词
 \newcommand\enkeywords[1]{%
-    \vspace{2ex}\noindent{\textbf{\hhut@label@enkeywords}} #1}
+    \vspace{2ex}{\textbf{\hhut@label@enkeywords}} #1}
 
 %% 目录
 \renewcommand\tableofcontents{%
@@ -868,6 +617,7 @@ footskip=0.7cm % 页脚1.8cm %
            {\settowidth\labelwidth{\@biblabel{#1}}%
             \leftmargin\labelwidth
             \advance\leftmargin\labelsep
+            \linespread{1.5}
             \setlength{\parsep}{-0.5mm}
             \setlength{\labelsep}{0.5em}
             \setlength{\itemsep}{0.05pc}
@@ -909,53 +659,7 @@ footskip=0.7cm % 页脚1.8cm %
      \setlength{\itemsep}{0cm} % 标签间距
     \setlength{\listparindent}{0cm} % 段落缩进量
     \setlength{\topsep}{0pt} % 标签与上文的间距
-    }}{\end{list}}    
-
-%% 简历与科研成果页
-\newenvironment{resume}{%
-    \cleardoublepage
-    \chapter{\hhut@label@resume}
-    \songti    
-}{}
-
-%% 学术论文、科研项目、所获荣誉用researchitem{<类别>}开启
-\newcommand{\researchitem}[1]{%
-    \vspace{12bp}{\zihao{4} \heiti \leftline{#1}}\par\vspace{6bp}
-}
-
-%% 攻读博士学位期间发表的主要成果用publications罗列
-\newlist{publications}{enumerate}{1}
-\setlist[publications]{
-    label=[\arabic*],
-    align=left,
-    nosep,
-    itemsep=0.05pc,
-    leftmargin=8mm,
-    labelsep=!,
-    resume
-}
-
-%% 攻读博士学位期间参与的科研项目用projects罗列
-\newlist{projects}{enumerate}{1}
-\setlist[projects]{
-    label=[\arabic*],
-    align=left,
-    nosep,
-    itemsep=0.05pc,
-    leftmargin=8mm,
-    labelsep=!,
-}
-
-%% 攻读博士学位期间所获的荣誉与奖励用honours罗列
-\newlist{honours}{enumerate}{1}
-\setlist[honours]{
-    label=[\arabic*],
-    align=left,
-    nosep,
-    itemsep=0.05pc,
-    leftmargin=8mm,
-    labelsep=!,
-}
+    }}{\end{list}}
 
 %% 中文破折号
 \newcommand{\cndash}{\rule{0.0em}{0pt}\rule[0.35em]{1.4em}{0.05em}\rule{0.2em}{0pt}}
@@ -964,5 +668,3 @@ footskip=0.7cm % 页脚1.8cm %
 \newcommand{\hhutspace}[1][1]{\hspace{#1\ccwd}}
 
 \endinput
-%%
-%% End of file `hhuthesis.cls'

@@ -24,7 +24,7 @@ Tex Live 2019
 > 提示：不用管里面提到的封面信息哦，本项目已经为你处理好了~🤗   
 
 ## 问题反馈
-如有任何问题可直接提issue，或通过我的Email<bhqhz0209@gmail.com>联系我
+如有任何问题可直接提issue，或通过我的[Email](mailto:davyqin3@gmail.com)联系我
 
 ## 支持
 如果有帮助到学弟学妹们，希望大家能点个star支持一下作者啦~😊
