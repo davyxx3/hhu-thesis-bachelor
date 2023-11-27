@@ -10,7 +10,7 @@
 
 因此本人在之前写毕业论文时，修改了[hhuthesis](https://github.com/caowenhan/hhuthesis)项目的部分源码，
 仿照教务系统中的Word版本科毕业论文格式，搭建了LaTeX版的本科毕业论文格式模版
->注：最新版本基于[2023年毕业论文规范](https://github.com/davyxx3/hhu-thesis-bachelor/blob/master/thesis-standard.md)开发
+>注：最新版本基于[2023年毕业论文规范](https://github.com/davyxx3/hhu-thesis-bachelor/blob/master/thesis-standard.pdf)开发
 
 此模板已将中英文封面、目录、声明等页设置好，使用者无需操心论文格式，只需专注于论文写作即可🙌
 
