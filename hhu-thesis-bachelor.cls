@@ -19,8 +19,8 @@
 \def\hhut@label@cover{中文封面}
 \def\hhut@label@name{姓名}
 \def\hhut@label@reviewer{评阅人}
-\def\hhut@label@studentnumber{学号：}
-\def\hhut@label@grade{年级：}
+\def\hhut@label@studentnumber{学号}
+\def\hhut@label@grade{年级}
 \def\hhut@label@tutor{指导教师}
 \def\hhut@label@major{专业}
 \def\hhut@label@thesistype{本科毕业论文}
@@ -162,8 +162,8 @@ footskip=0.7cm % 页脚1.8cm %
 %% 章序号与章名间空一格
 \ctexset{chapter={
 		name = {第,章},
-		number = {\chinese{chapter}},
-		format = {\centering \rmfamily \heiti \zihao{-2}},
+		number = {\arabic{chapter}},
+		format = {\centering \rmfamily \bfseries \heiti \zihao{-2}},
 		pagestyle = {hhut@headings},
         aftername = {\enspace},
         beforeskip= {16pt},
@@ -173,11 +173,11 @@ footskip=0.7cm % 页脚1.8cm %
 }
 
 %% 设置一级章节标题格式
-%% 黑体三号，左对齐，行距20磅
+%% 黑体四号，左对齐，行距20磅
 %% 间距设定为段前6磅，段后6磅
 %% 序号与题目间空一格
 \ctexset{section={
-		format={\raggedright \rmfamily \heiti \zihao{3}},
+		format={\raggedright \rmfamily \bfseries \heiti \zihao{4}},
         aftername = {\enspace},
 		beforeskip = {16pt},
 		afterskip = {16pt},
@@ -186,11 +186,11 @@ footskip=0.7cm % 页脚1.8cm %
 }
 
 %% 设置二级章节标题样式
-%% 黑体小三号，左对齐，行距20磅
+%% 黑体小四，左对齐，行距20磅
 %% 间距设定为段前6磅，段后3磅
 %% 序号与题名空一格
 \ctexset{subsection={
-		format={\raggedright \rmfamily \heiti \zihao{-3}},
+		format={\raggedright \rmfamily \bfseries \heiti \zihao{-4}},
         aftername = {\enspace},
 		beforeskip = {16pt},
 		afterskip = {12pt},
@@ -198,6 +198,7 @@ footskip=0.7cm % 页脚1.8cm %
 	}
 }
 
+%% 本科论文模板中未明确定义
 %% 设置三级章节标题样式
 %% 仿宋四号，左对齐，行距20磅
 %% 间距设定为段前3磅，段后0磅
@@ -211,8 +212,8 @@ footskip=0.7cm % 页脚1.8cm %
 	}
 }
 
-%% 设置目录深度最多到第1层
-\setcounter{tocdepth}{1}
+%% 设置目录深度最多到第2层
+\setcounter{tocdepth}{2}
 
 %% 设定目录格式，目录颜色更换为黑色，并将目录、插图索引、附表索引加入目录中。
 \addtocontents{toc}{\protect\hypersetup{hidelinks}}
@@ -220,10 +221,13 @@ footskip=0.7cm % 页脚1.8cm %
 \addtocontents{lof}{\protect\hypersetup{hidelinks}}
 
 %% 设置目录格式
-\titlecontents{chapter}[0pt]{\heiti \zihao{-4}}
+\titlecontents{chapter}[0pt]{\bfseries\heiti \zihao{4}}
     {\thecontentslabel\hspace{0.5\ccwd}}{}
     {\hspace{.5em}\titlerule*{.}\contentspage}
-\titlecontents{section}[\ccwd]{\songti \zihao{-4}}
+\titlecontents{section}[2\ccwd]{\songti \zihao{-4}}
+    {\thecontentslabel\hspace{0.5\ccwd}}{}
+    {\hspace{.5em}\titlerule*{.}\contentspage}
+\titlecontents{subsection}[4\ccwd]{\songti \zihao{-4}}
     {\thecontentslabel\hspace{0.5\ccwd}}{}
     {\hspace{.5em}\titlerule*{.}\contentspage}
 
@@ -300,7 +304,7 @@ footskip=0.7cm % 页脚1.8cm %
 
 %% 设置图表标题选项，标题字体大小为五号字
 \DeclareCaptionLabelSeparator{zhspace}{\hspace{1\ccwd}}
-\DeclareCaptionFont{fontsize}{\zihao{5}}
+\DeclareCaptionFont{fontsize}{\heiti\zihao{5}}
 \captionsetup{
 	font = {fontsize},
 	labelsep = zhspace,
@@ -308,16 +312,12 @@ footskip=0.7cm % 页脚1.8cm %
 \captionsetup[table][bi-second]{name=Table}
 \captionsetup[figure][bi-second]{name=Fig.}
 \captionsetup[table]{
-    labelfont = bf,
-    textfont = bf,
     position = top,
 	aboveskip = {6bp},
 	belowskip = {6bp},
 }
 \numberwithin{table}{section}
 \captionsetup[figure]{
-    labelfont = bf,
-    textfont = bf,
     position = bottom,
 	aboveskip = {6bp},
 	belowskip = {6bp},
@@ -327,10 +327,10 @@ footskip=0.7cm % 页脚1.8cm %
 \DeclareGraphicsExtensions{.pdf,.eps,.jpg,.png,.jpeg,.bmp}
 \graphicspath{{figures/}}   % 定义图表默认路径
 
-%% 定义公式、图、表编号的形式“C.S.N”
-\renewcommand\theequation{\arabic{chapter}.\arabic{section}.\arabic{equation}}
-\renewcommand\thefigure{\arabic{chapter}.\arabic{section}.\arabic{figure}}
-\renewcommand\thetable{\arabic{chapter}.\arabic{section}.\arabic{table}}
+%% 定义公式、图、表编号的形式“C.N”
+\renewcommand\theequation{\arabic{chapter}.\arabic{equation}}
+\renewcommand\thefigure{\arabic{chapter}.\arabic{figure}}
+\renewcommand\thetable{\arabic{chapter}.\arabic{table}}
 
 % 上标引用
 \newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}}
@@ -436,11 +436,11 @@ footskip=0.7cm % 页脚1.8cm %
         \hfill
         \noindent
         \makebox[40pt][r]{\hhut@label@studentnumber}
-        \hhutunderline[90pt]{\hhut@value@studentnumber}
+        \hhutunderline[90pt]{\hhut@value@studentnumber}\makebox[60pt][r]{}
         \vskip 10pt
         \hfill
         \makebox[40pt][r]{\hhut@label@grade}
-        \hhutunderline[90pt]{\hhut@value@grade}
+        \hhutunderline[90pt]{\hhut@value@grade}\makebox[60pt][r]{}
     }
     \vskip 40pt
     \begin{center}
@@ -458,11 +458,15 @@ footskip=0.7cm % 页脚1.8cm %
     \begin{spacing}{2.0}
     {\songti \zihao{-3} \bfseries
         \begin{centering}
-            \noindent{\songti \zihao{-3} \hhut@label@major}
-            \hhutunderline[150pt]{\hhut@value@major}\\
-            {\songti \zihao{-3}\hhut@label@name}\hhutunderline[150pt]{\hhut@value@author}\\
-            {\songti \zihao{-3}\hhut@label@tutor}\hhutunderline[150pt]{\hhut@value@tutor}\\
-            {\songti \zihao{-3}\hhut@label@reviewer}\hhutunderline[150pt]{}\\
+            \noindent
+            \makebox[60pt][s]{\heiti \zihao{-3} \hhut@label@major}
+                \hhutunderline[150pt]{\mdseries\hhut@value@major}\\
+            \makebox[60pt][s]{\heiti \zihao{-3}\hhut@label@name}
+                \hhutunderline[150pt]{\mdseries\hhut@value@author}\\
+            \makebox[60pt][s]{\heiti \zihao{-3}\hhut@label@tutor}
+                \hhutunderline[150pt]{\mdseries\hhut@value@tutor}\\
+            \makebox[60pt][s]{\heiti \zihao{-3}\hhut@label@reviewer}
+                \hhutunderline[150pt]{}\\
         \end{centering}
     }
     \vskip 50pt
@@ -500,17 +504,19 @@ footskip=0.7cm % 页脚1.8cm %
         \begin{spacing}{2.0}
             {\zihao{2} \textbf{\hhut@value@englishtitle}}
         \vskip 60pt
-        {\normalfont\rmfamily\zihao{4}College:
-        \normalfont\rmfamily \zihao{4} \hhut@value@englishcollege}
-        \vskip 10pt
-        {\normalfont\rmfamily\zihao{4}Subject:
-        \normalfont\rmfamily \zihao{4} \hhut@value@englishmajor}
-        \vskip 10pt
-        {\normalfont\rmfamily\zihao{4}Name:
-        \normalfont\rmfamily \zihao{4} \hhut@value@englishauthor}
-        \vskip 10pt
-        {\normalfont\rmfamily\zihao{4}Directed by:
-        \normalfont\rmfamily \zihao{4} \hhut@value@englishtutor}
+        \begin{centering}
+            {\normalfont\rmfamily\zihao{4}\makebox[70pt][l]{College}:
+            \makebox[250pt][l]{\normalfont\rmfamily \zihao{4} \hhut@value@englishcollege}}
+            \vskip 10pt
+            {\normalfont\rmfamily\zihao{4}\makebox[70pt][l]{Subject}:
+            \makebox[250pt][l]{\normalfont\rmfamily \zihao{4} \hhut@value@englishmajor}}
+            \vskip 10pt
+            {\normalfont\rmfamily\zihao{4}\makebox[70pt][l]{Name}:
+            \makebox[250pt][l]{\normalfont\rmfamily \zihao{4} \hhut@value@englishauthor}}
+            \vskip 10pt
+            {\normalfont\rmfamily\zihao{4}\makebox[70pt][l]{Directed by}:
+            \makebox[250pt][l]{\normalfont\rmfamily \zihao{4} \hhut@value@englishtutor}}
+        \end{centering}
         \vskip 60pt
         {\rmfamily \zihao{-2} {\hhut@value@englishlocate}}\\      
         \end{spacing}
@@ -600,7 +606,7 @@ footskip=0.7cm % 页脚1.8cm %
     \else
     \@restonecolfalse
     \fi
-    \chapter*{\contentsname}%目录里显示“目录”，否则\chapter*
+    \chapter{\contentsname}%目录里显示“目录”，否则\chapter*
     \@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}%
     \pdfbookmark[0]{目录}{bittoc}
     \@starttoc{toc}%
