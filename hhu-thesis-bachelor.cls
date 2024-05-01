@@ -615,7 +615,7 @@ footskip=0.7cm % 页脚1.8cm %
 
 %% 参考文献
 \renewenvironment{thebibliography}[1]
-     {\footnotesize
+     {\zihao{5}
       \chapter*{\bibname}
       \@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}%
       \addcontentsline{toc}{chapter}{参考文献}
