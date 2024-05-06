@@ -52,6 +52,7 @@
 %% 生成封面和声明页
 %%
 
+%TC:ignore
 %% 生成中文封面
 \makecover
 %% 生成英文封面
@@ -76,6 +77,7 @@
 % \listoffigures
 % \listoftables
 % \renewcommand{\addvspace}[1]{\origaddvspace{#1}}
+%TC:endignore
 
 %%
 %% 正文部分（在这里引入你的所有tex文件和bib文件）
@@ -90,6 +92,7 @@
 %% 参考文献样式设定
 \bibliographystyle{gbt7714-numerical}% 顺序编码式
 
+%TC:ignore
 %% 参考文献，10号字，使用 BibTeX，包含参考文献文件.bib
 %% 如果新创建了bib文件，记得要在这里引用哦！！！
 \bibliography{reference/chap1}
@@ -102,4 +105,5 @@
 \backmatter
 %% 致谢
 \input{chapters/acknowledgement}
+%TC:endignore
 \end{document}
