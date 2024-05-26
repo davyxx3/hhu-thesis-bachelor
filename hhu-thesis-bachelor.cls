@@ -200,11 +200,12 @@ footskip=0.7cm % 页脚1.8cm %
 
 %% 本科论文模板中未明确定义
 %% 设置三级章节标题样式
-%% 仿宋四号，左对齐，行距20磅
+%% 宋体小四，左对齐，行距20磅
 %% 间距设定为段前3磅，段后0磅
 %% 序号与题名空一格
 \ctexset{subsubsection={
-		format={\raggedright \rmfamily \fangsong \zihao{4}},
+        number = {(\arabic{subsubsection})},
+		format={\raggedright \rmfamily \bfseries \songti \zihao{-4}},
         aftername = {\enspace},
 		beforeskip = {12pt},
 		afterskip = {12pt},
@@ -608,7 +609,6 @@ footskip=0.7cm % 页脚1.8cm %
     \fi
     \chapter{\contentsname}%目录里显示“目录”，否则\chapter*
     \@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}%
-    \pdfbookmark[0]{目录}{bittoc}
     \@starttoc{toc}%
     \if@restonecol\twocolumn\fi
 }
