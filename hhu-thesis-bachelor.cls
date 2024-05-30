@@ -437,7 +437,8 @@ footskip=0.7cm % 页脚1.8cm %
         \hfill
         \noindent
         \makebox[40pt][r]{\hhut@label@studentnumber}
-        \hhutunderline[90pt]{\hhut@value@studentnumber}\makebox[60pt][r]{}
+        \hhutunderline[90pt]{\hhut@value@studentnumber}\makebox[62.6pt][r]{}
+        %% https://github.com/davyxx3/hhu-thesis-bachelor/issues/9
         \vskip 10pt
         \hfill
         \makebox[40pt][r]{\hhut@label@grade}
