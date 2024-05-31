@@ -424,6 +424,7 @@ footskip=0.7cm % 页脚1.8cm %
 \newcommand\major[1]{\def\hhut@value@major{#1}}
 \newcommand\awarded[1]{\def\hhut@value@awarded{#1}}
 \newcommand\tutor[1]{\def\hhut@value@tutor{#1}}
+\newcommand\reviewer[1]{\def\hhut@value@reviewer{#1}}
 \newcommand\thesisdate[1]{\def\hhut@value@thesisdate{#1}}
 \newcommand\location[1]{\def\hhut@value@location{#1}}
 
@@ -468,7 +469,7 @@ footskip=0.7cm % 页脚1.8cm %
             \makebox[60pt][s]{\heiti \zihao{-3}\hhut@label@tutor}
                 \hhutunderline[150pt]{\mdseries\hhut@value@tutor}\\
             \makebox[60pt][s]{\heiti \zihao{-3}\hhut@label@reviewer}
-                \hhutunderline[150pt]{}\\
+                \hhutunderline[150pt]{\mdseries\hhut@value@reviewer}\\
         \end{centering}
     }
     \vskip 50pt
